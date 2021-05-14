@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const config = require('../../config');
 const DBStatusAdapter = require('../adapters/DBStatusAdapter');
 
-const { uri } = config.mongoDB;
+const { uri } = config.database;
 
 mongoose
     .connect(uri, {
@@ -20,4 +20,4 @@ mongoose
         throw new Error(error);
     });
 
-mongoose.Promise = global.Promise;
+module.exports = mongoose;
